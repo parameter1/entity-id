@@ -1,20 +1,36 @@
 {
-  "name": "entity-id",
+  "name": "@parameter1/entity-id",
   "version": "0.0.0",
-  "main": "index.js",
-  "repository": "https://zarathustra323@github.com/parameter1/entity-id.git",
+  "description": "Utility library for handling entity identifiers and namespaces.",
   "author": "Jacob Bare <jacob@parameter1.com>",
+  "repository": "https://github.com/parameter1/entity-id.git",
+  "main": "src/index.js",
   "license": "MIT",
-  "private": true,
   "scripts": {
-    "lerna": "lerna",
-    "test": "lerna run test",
-    "lint": "lerna run lint"
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "dev": "webpack serve --open --port 61120",
+    "lint": "eslint --ext .js ./",
+    "test": "yarn lint",
+    "postinstall": "are-you-es5 check -r --silent . | tail -n 1 > ./non_es5_node_modules"
   },
-  "workspaces": [
-    "packages/*"
-  ],
+  "dependencies": {
+    "@babel/runtime": "^7.13.10",
+    "core-js": "^3.10.1"
+  },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "@babel/core": "^7.13.14",
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "are-you-es5": "^2.1.1",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "html-webpack-plugin": "^5.3.1",
+    "webpack": "^5.31.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }
