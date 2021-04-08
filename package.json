@@ -1,0 +1,20 @@
+{
+  "name": "entity-id",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "https://zarathustra323@github.com/parameter1/entity-id.git",
+  "author": "Jacob Bare <jacob@parameter1.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lerna": "lerna",
+    "test": "lerna run test",
+    "lint": "lerna run lint"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
